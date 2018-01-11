@@ -4,8 +4,6 @@ services:
   builder:
     image: qtflow-builder
     build: .
-    environment:
-      - BUILD=true
     volumes:
       - ./build:/build
 

@@ -20,6 +20,8 @@ RUN 	DEBIAN_FRONTENT=noninteractive apt-get update && \
 		qt5keychain-dev \
 		qt5-style-plugins
 
+RUN DEBIAN_FRONTENT=noninteractive apt-get install -y git
+
 RUN mkdir /build
 
 WORKDIR /build
