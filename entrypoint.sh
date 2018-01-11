@@ -11,9 +11,8 @@ make
 
 
 if [[ ! -d /build/graywolf ]]; then git clone https://github.com/leviathanch/graywolf.git /build/graywolf; fi
-mkdir -p /build/graywolf/build
-cd /build/graywolf/build
-cmake
+cd /build/graywolf
+cmake .
 make
 
 if [[ ! -d /build/qrouter ]]; then git clone https://github.com/leviathanch/qrouter.git /build/qrouter; fi
