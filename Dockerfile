@@ -18,14 +18,20 @@ RUN 	DEBIAN_FRONTENT=noninteractive apt-get update && \
 		qtdeclarative5-dev-tools \
 		qtconnectivity5-dev \
 		qt5keychain-dev \
-		qt5-style-plugins
-
-RUN DEBIAN_FRONTENT=noninteractive apt-get install -y \
-	git \
-	gawk \
-	cmake \
-	clang \
-	pkg-config
+		qt5-style-plugins \
+		tcl8.6-dev \
+		tk8.6-dev \
+		tcl \
+		libgsl-dev \
+		libreadline-dev \
+		python3 \
+		mercurial \
+		iverilog \
+		git \
+		gawk \
+		cmake \
+		clang \
+		pkg-config
 
 RUN mkdir /build
 
