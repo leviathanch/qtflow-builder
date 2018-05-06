@@ -41,8 +41,10 @@ RUN 	DEBIAN_FRONTENT=noninteractive apt-get update && \
 		libpythonqt-dev
 
 RUN apt-get install -y \
+		vim \
 		ssh \
-		debmake
+		debmake \
+		git-buildpackage
 
 RUN mkdir /build
 
