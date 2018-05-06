@@ -52,9 +52,14 @@ cd /build
 tar -cjf "$ORIG_SOURCE_NAME" "$PACKAGE_NAME"
 
 # extracting debian recipes
-cd /build/$PACKAGE_NAME
-tar xf "/build/debian.tar.xz"
-dch --distribution unstable --package "qtflow" --newversion "$FULL_REVISION-1" "Auto fetched most recent revision from GIT"
+cd /build/qtflow
+
+export NAME="David Lanzendörfer"
+export EMAIL="david.lanzendoerfer@lanceville.cn"
+export DEBFULLNAME="$NAME"
+export DEBEMAIL="$EMAIL"
+rm debian/changelog
+dch --create --distribution unstable --package "qtflow" --newversion "$FULL_REVISION-1" "Auto fetched most recent revision from GIT"
 dpkg-buildpackage -j4
 
 #cd /build
