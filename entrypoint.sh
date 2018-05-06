@@ -27,8 +27,9 @@ if [[ ! -d /build/qtflow ]]; then git clone --recursive https://github.com/levia
 # build debian package
 cd /build/qtflow
 export GIT_REVISION="`git rev-parse --short HEAD`"
-export PACKAGE_NAME="qtflow-0.1+git$GIT_REVISION"
-export ORIG_SOURCE_NAME="qtflow_0.1+git$GIT_REVISION.orig.tar.bz2"
+export FULL_REVISION="0.1+git$GIT_REVISION"
+export PACKAGE_NAME="qtflow-$FULL_REVISION"
+export ORIG_SOURCE_NAME="qtflow_$FULL_REVISION.orig.tar.bz2"
 
 # cleaning up
 rm -rf ../$PACKAGE_NAME*
@@ -53,6 +54,7 @@ tar -cjf "$ORIG_SOURCE_NAME" "$PACKAGE_NAME"
 # extracting debian recipes
 cd /build/$PACKAGE_NAME
 tar xf "/build/debian.tar.xz"
+dch --distribution unstable --package "qtflow" --newversion "$FULL_REVISION-1" "Auto fetched most recent revision from GIT"
 dpkg-buildpackage -j4
 
 #cd /build
