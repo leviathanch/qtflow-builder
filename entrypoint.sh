@@ -72,7 +72,7 @@ tar -cjf "$ORIG_SOURCE_NAME" "$PACKAGE_NAME"
 # extracting debian recipes
 cd /build/qtflow
 if [[ -f /build/qtflow/debian/changelog ]]; then
-	dch -b --distribution unstable --package "qtflow" --newversion "$FULL_REVISION-1" "$COMMIT_MESSAGE";
+	dch --distribution unstable --package "qtflow" --newversion "$FULL_REVISION-1" "$COMMIT_MESSAGE";
 else
 	dch --create --distribution unstable --package "qtflow" --newversion "$FULL_REVISION-1" "$COMMIT_MESSAGE";
 fi
