@@ -60,10 +60,6 @@ COPY ./authorized_keys /root/.ssh
 
 COPY ./setup.sh /setup.sh
 
-COPY ./debian.tar.xz /build/debian.tar.xz
-
 #RUN /setup.sh
 
 ENTRYPOINT /entrypoint.sh
-#ENTRYPOINT /bin/bash
-
