@@ -58,7 +58,7 @@ export NAME="David Lanzendörfer"
 export EMAIL="david.lanzendoerfer@lanceville.cn"
 export DEBFULLNAME="$NAME"
 export DEBEMAIL="$EMAIL"
-rm debian/changelog
+rm -f debian/changelog
 dch --create --distribution unstable --package "qtflow" --newversion "$FULL_REVISION-1" "Auto fetched most recent revision from GIT"
 dpkg-buildpackage -j4
 

@@ -26,7 +26,6 @@ RUN 	DEBIAN_FRONTENT=noninteractive apt-get update && \
 		python3 \
 		mercurial \
 		iverilog \
-		git \
 		gawk \
 		cmake \
 		clang \
@@ -40,7 +39,8 @@ RUN 	DEBIAN_FRONTENT=noninteractive apt-get update && \
 		libboost-all-dev \
 		libpythonqt-dev
 
-RUN apt-get install -y \
+RUN	apt-get install -y \
+		git \
 		vim \
 		ssh \
 		debmake \
@@ -57,9 +57,5 @@ VOLUME /build
 COPY ./entrypoint.sh /entrypoint.sh
 
 COPY ./authorized_keys /root/.ssh
-
-COPY ./setup.sh /setup.sh
-
-#RUN /setup.sh
 
 ENTRYPOINT /entrypoint.sh
