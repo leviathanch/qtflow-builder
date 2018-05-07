@@ -44,6 +44,7 @@ RUN	apt-get install -y \
 		vim \
 		ssh \
 		debmake \
+		locales-all \
 		git-buildpackage
 
 RUN mkdir /build
