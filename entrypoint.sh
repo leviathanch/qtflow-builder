@@ -80,7 +80,6 @@ fi
 cd debian
 git add changelog
 git commit changelog -m "Docker auto build. GIT message $COMMIT_MESSAGE from revision $GIT_REVISION"
-git push
 cd ..
 
 dpkg-buildpackage -j4;
