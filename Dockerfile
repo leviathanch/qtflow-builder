@@ -47,16 +47,12 @@ RUN	apt-get install -y \
 		locales-all \
 		git-buildpackage
 
-RUN mkdir /build
-
 RUN mkdir /root/.ssh
 
 WORKDIR /build
 
-VOLUME /build
+COPY ssh.sh /ssh.sh
 
-COPY ./entrypoint.sh /entrypoint.sh
+COPY build.sh /build.sh
 
-COPY ./authorized_keys /root/.ssh
-
-ENTRYPOINT /entrypoint.sh
+COPY authorized_keys /root/.ssh
