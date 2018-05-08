@@ -77,10 +77,10 @@ else
 	dch --create --distribution unstable --package "qtflow" --newversion "$FULL_REVISION-1" "$COMMIT_MESSAGE";
 fi
 
-cd debian
-git add changelog
-git commit changelog -m "Docker auto build. GIT message $COMMIT_MESSAGE from revision $GIT_REVISION"
-cd ..
+#cd debian
+#git add changelog
+#git commit changelog -m "Docker auto build. GIT message $COMMIT_MESSAGE from revision $GIT_REVISION"
+#cd ..
 
 dpkg-buildpackage -j4;
 
